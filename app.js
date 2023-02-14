@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const cors=require('cors')
+const cors = require('cors')
 
 //어떤 origin 이든 데이터 꺼내갈수있음 cors(테스트용에서만 사용할것)
 app.use(cors())
@@ -25,8 +25,9 @@ app.get('/api/todo', (req, res) => {
 
 app.post('/api/todo', (req, res) => {
     const {text, done} = req.body; //데이터를 꺼내옴
+    console.log('req.body : ', req.body);
     todoList.push({
-        id:id++,
+        id: id++,
         text,
         done,
     })
